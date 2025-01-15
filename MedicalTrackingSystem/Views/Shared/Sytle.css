@@ -1,0 +1,44 @@
+/* Renk Paleti */
+.color1 { color: #53273a; } /* Koyu mor */
+.color2 { color: #783a46; } /* Kırmızımsı mor */
+.color3 { color: #aa5d59; } /* Kızıl kahverengi */
+.color4 { color: #e3896e; } /* Soluk turuncu */
+.color5 { color: #f1c77c; } /* Soluk sarı */
+.color6 {
+    color: #140f07; /* Koyu kahverengi */
+  }
+  
+  .color7 {
+    color: #252846; /* Koyu mavi */
+  }
+  
+  .color8 {
+    color: #5a5e9d; /* Mavi-vişne tonları */
+  }
+  
+  .color9 {
+    color: #999cfa; /* Soluk mavi mor */
+  }
+  
+  .color10 {
+    color: #f1e5f6; /* Soluk lavanta */
+  }
+  
+
+/* Diğer stil ayarları */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f4f8;
+}
+
+header {
+  background-color: #a8e6cf;
+  color: white;
+  border-bottom: 5px solid #80d6b7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #343a40;
+  color: white;
+}

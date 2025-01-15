@@ -1,0 +1,30 @@
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Hastalar";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4" style="background: linear-gradient(to right, #d7d6b0, #d8bed8); color: white; padding: 10px; border-radius: 5px;">
+        Hasta Listesi
+    </h1>
+    
+    <div class="row">
+        @foreach (var patient in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light" style="background-color: #f3f3f3;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #4e4b5e;">@patient.FirstName @patient.LastName</h5>
+                        <p class="card-text" style="color: #d1b3c2;"><strong>Yaş:</strong> @patient.Age</p>
+                        <p class="card-text" style="color: #d1c3aa;"><strong>Cinsiyet:</strong> @patient.Gender</p>
+                        <p class="card-text" style="color: #d7d6b0;"><strong>Email:</strong> @patient.Email</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

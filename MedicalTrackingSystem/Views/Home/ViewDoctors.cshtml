@@ -1,0 +1,48 @@
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}
+@model IEnumerable<MedicalTrackingSystem.Models.Doctor>
+
+@{
+    Layout = "_Layout";  // Sayfa düzenini ayarla
+    ViewData["Title"] = "Doktorlar";  // Sayfa başlığı
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4" style="background: linear-gradient(to right, #d8bed8, #d1b3c2); color: white; padding: 10px; border-radius: 5px;">
+        Doktorlar
+    </h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var doctor in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-lg border-light" style="background-color: #f3f3f3;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #4e4b5e;">@doctor.FirstName @doctor.LastName</h5>
+                            <p class="card-text" style="color: #d1b3c2;">
+                                <strong>Uzmanlık Alanı:</strong> @doctor.Specialty
+                            </p>
+                            <p class="card-text" style="color: #d1c3aa;">
+                                <strong>Hastane:</strong> @doctor.Hospital
+                            </p>
+                            <p class="card-text" style="color: #d7d6b0;">
+                                <strong>Ücret:</strong> @doctor.Fee
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Gösterilecek doktor bulunamadı.
+        </div>
+    }
+</div>

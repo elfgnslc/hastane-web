@@ -1,0 +1,34 @@
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}
+
+@{
+    Layout = "_Layout"; // Use the layout for this page
+    ViewData["Title"] = "Alerjiler"; // Set the page title
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4"
+        style="background: linear-gradient(to right, #d1b3c2, #d8bed8); color: white; padding: 10px; border-radius: 5px;">
+        Alerji Sonuçları
+    </h2>
+
+    <div class="row">
+        @foreach (var allergy in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light" style="background-color: #f3f3f3;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #4e4b5e;">@allergy.Patient?.FirstName
+                            @allergy.Patient?.LastName</h5>
+                        <p class="card-text" style="color: #d1b3c2;"><strong>Alerji Adı:</strong> @allergy.Name</p>
+                        <p class="card-text" style="color: #d1b3c2;"><strong>Alerjen:</strong> @allergy.Allergen</p>
+                        <p class="card-text" style="color: #d1c3aa;"><strong>Reaksiyon:</strong> @allergy.Reaction</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

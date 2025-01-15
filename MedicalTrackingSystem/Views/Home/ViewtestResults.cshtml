@@ -1,0 +1,77 @@
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Tahlil Sonuçları";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4 main-title">Tahlil Sonuçları</h1>
+
+    <div class="row">
+        @foreach (var testResult in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg border-0 test-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-flask fa-2x me-3" style="color: #f1c40f;"></i>
+                            <h5 class="card-title mb-0">@testResult.TestName</h5>
+                        </div>
+                        
+                        <div class="card-text">
+                            <div class="mb-2">
+                                <strong>Sonuç:</strong>
+                                <span class="badge @(testResult.Result.ToLower() == "pozitif" ? "bg-danger" : 
+                                                   testResult.Result.ToLower() == "negatif" ? "bg-success" : 
+                                                   "bg-warning") rounded-pill ms-2">
+                                    @testResult.Result
+                                </span>
+                            </div>
+                            
+                            <div>
+                                <strong>Hasta:</strong>
+                                <span class="ms-2">
+                                    @if (testResult.Patient != null)
+                                    {
+                                        @testResult.Patient.FirstName @testResult.Patient.LastName
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Bilinmeyen Hasta</span>
+                                    }
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .test-card {
+        background: linear-gradient(145deg, #ffffff, #fff8e8);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .test-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .badge {
+        padding: 8px 12px;
+        font-weight: 500;
+    }
+
+    .main-title {
+        color: #2c3e50;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+</style>

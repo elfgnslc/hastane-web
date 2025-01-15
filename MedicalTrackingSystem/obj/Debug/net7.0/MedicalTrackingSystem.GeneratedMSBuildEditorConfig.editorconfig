@@ -1,0 +1,117 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MedicalTrackingSystem
+build_property.RootNamespace = MedicalTrackingSystem
+build_property.ProjectDir = /Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/AddAllerrgy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGRBbGxlcnJneS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/AddAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGRBcHBvaW50bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/AddDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGREb2N0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/AddPatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGRQYXRpZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/AddtestResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BZGR0ZXN0UmVzdWx0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/Appointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BcHBvaW50bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/Hospital.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Ib3NwaXRhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/PatientLog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXRpZW50TG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/PatientLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXRpZW50TG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/PatientRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9QYXRpZW50UmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/ViewAllergyResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWV3QWxsZXJneVJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/ViewAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWV3QXBwb2ludG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/ViewDoctors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWV3RG9jdG9ycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/ViewPatients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWV3UGF0aWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Home/ViewtestResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWV3dGVzdFJlc3VsdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Shared/SampleDataFromJson.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1NhbXBsZURhdGFGcm9tSnNvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/elifmuberraguneslice/Desktop/MedicalTrackingSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-s1frychhe4

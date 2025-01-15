@@ -1,0 +1,81 @@
+@model List<MedicalTrackingSystem.Models.Appointment>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Randevular";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4"
+        style="background: linear-gradient(to right, #4a90e2, #8e44ad); color: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <i class="fas fa-calendar-check me-2"></i>Randevular
+    </h2>
+
+    <div class="row">
+        @if (Model == null || !Model.Any())
+        {
+            <div class="col-12 text-center p-5">
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>Henüz randevu bulunmamaktadır.
+                </div>
+            </div>
+        }
+        else
+        {
+            @foreach (var appointment in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg border-0 hover-effect" 
+                         style="background: linear-gradient(145deg, #ffffff, #f5f5f5); border-radius: 15px; transition: transform 0.3s ease;">
+                        <div class="card-header bg-transparent border-0 pt-4">
+                            <h5 class="card-title text-center" style="color: #2c3e50; font-weight: 600;">
+                                @if (appointment.Patient != null)
+                                {
+                                    <i class="fas fa-user-circle me-2"></i>@($"{appointment.Patient.FirstName} {appointment.Patient.LastName}")
+                                }
+                                else
+                                {
+                                    <span class="text-muted"><i class="fas fa-user-slash me-2"></i>Hasta bilgisi bulunamadı</span>
+                                }
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3 p-3" style="background: rgba(74, 144, 226, 0.1); border-radius: 10px;">
+                                <p class="card-text mb-2">
+                                    <i class="fas fa-user-md me-2" style="color: #4a90e2;"></i>
+                                    <strong>Doktor:</strong><br/>
+                                    @if (appointment.Doctor != null)
+                                    {
+                                        <span class="ms-4">@($"{appointment.Doctor.FirstName} {appointment.Doctor.LastName}")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted ms-4">Doktor bilgisi bulunamadı</span>
+                                    }
+                                </p>
+                            </div>
+                            <div class="p-3" style="background: rgba(142, 68, 173, 0.1); border-radius: 10px;">
+                                <p class="card-text mb-0">
+                                    <i class="far fa-clock me-2" style="color: #8e44ad;"></i>
+                                    <strong>Randevu Tarihi:</strong><br/>
+                                    <span class="ms-4">@appointment.Date?.ToString("dd.MM.yyyy HH:mm")</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<style>
+    .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+    }
+    
+    .card {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+</style>

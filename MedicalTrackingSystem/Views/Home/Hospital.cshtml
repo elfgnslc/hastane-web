@@ -1,0 +1,184 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Hastane Girişi";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand color3" href="#">
+            <i class="fas fa-hospital fa-2x me-2"></i>
+            Hastane Takip Sistemi
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Index", "Home")">
+                        <i class="fas fa-home fa-lg me-1"></i> Ana Sayfa
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Appointment", "Home")">
+                        <i class="fas fa-calendar-alt fa-lg me-1"></i> Randevu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("About", "Home")">
+                        <i class="fas fa-info-circle fa-lg me-1"></i> Hakkımızda
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Contact", "Home")">
+                        <i class="fas fa-envelope fa-lg me-1"></i> İletişim
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="login-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-card">
+                    <div class="login-header">
+                        <i class="fas fa-hospital-user fa-5x mb-3 color5"></i>
+                        <h3 class="color4">Hastane Girişi</h3>
+                        <div class="header-icons">
+                            <i class="fas fa-heartbeat fa-2x mx-2 color4"></i>
+                            <i class="fas fa-stethoscope fa-2x mx-2 color4"></i>
+                            <i class="fas fa-ambulance fa-2x mx-2 color4"></i>
+                        </div>
+                    </div>
+                    <div class="login-body">
+                        <form method="post" action="@Url.Action("Home", "Home")">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" name="email" required placeholder="name@example.com">
+                                <label for="email" class="color2">
+                                    <i class="fas fa-envelope-open-text fa-lg me-2"></i> E-posta
+                                </label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+                                <label for="password" class="color2">
+                                    <i class="fas fa-key fa-lg me-2"></i> Şifre
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-login w-100">
+                                <i class="fas fa-sign-in-alt fa-lg me-2"></i> Giriş Yap
+                            </button>
+                        </form>
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger mt-4">
+                                <i class="fas fa-exclamation-triangle fa-lg me-2"></i>
+                                @TempData["ErrorMessage"]
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .color1 {color: #140c09;}
+    .color2 {color: #41382c;}
+    .color3 {color: #7993ad;}
+    .color4 {color: #e3ebef;}
+    .color5 {color: #f9f9f9;}
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #41382c 0%, #140c09 100%);
+        min-height: 100vh;
+        background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%237993ad" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
+    }
+
+    .navbar {
+        background: rgba(249, 249, 249, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(20, 12, 9, 0.1);
+    }
+
+    .nav-link {
+        margin: 0 5px;
+        padding: 8px 15px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(65, 56, 44, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .login-container {
+        padding: 50px 0;
+    }
+
+    .login-card {
+        background: rgba(249, 249, 249, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(20, 12, 9, 0.1);
+        overflow: hidden;
+        animation: cardFloat 3s ease-in-out infinite;
+    }
+
+    .login-header {
+        background: linear-gradient(135deg, #41382c 0%, #140c09 100%);
+        padding: 30px;
+        text-align: center;
+    }
+
+    .header-icons {
+        margin-top: 20px;
+        animation: iconPulse 2s ease-in-out infinite;
+    }
+
+    .login-body {
+        padding: 40px;
+    }
+
+    .form-control {
+        border: 2px solid #e3ebef;
+        border-radius: 10px;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #41382c;
+        box-shadow: 0 0 0 0.2rem rgba(65, 56, 44, 0.25);
+    }
+
+    .btn-login {
+        background: linear-gradient(135deg, #41382c 0%, #140c09 100%);
+        color: #f9f9f9;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(20, 12, 9, 0.4);
+    }
+
+    @@keyframes cardFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @@keyframes iconPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+</style>

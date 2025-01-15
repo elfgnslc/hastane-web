@@ -1,0 +1,82 @@
+@{
+    Layout = "_Layout"; // _Layout.cshtml dosyasını kullanıyoruz
+    ViewData["Title"] = "Tahlil Sonucu Ekle"; // Sayfa başlığını ayarlıyoruz
+}
+
+@model MedicalTrackingSystem.Models.TestResults
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand color3" href="#">Hastane Takip Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4"
+        style="background: linear-gradient(to right, #a5c7e3, #e3c4a8); color: #ffffff; padding: 15px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        Test Sonucu Ekle
+    </h1>
+    <form asp-action="AddtestResults" method="post">
+        <div class="card shadow-sm p-4" style="border-radius: 15px; border: none; background: linear-gradient(145deg, #ffffff, #f8f9fa);">
+            <div class="form-group">
+                <label for="PatientId" class="font-weight-bold text-muted">Hasta Seçin</label>
+                <select class="form-control" id="PatientId" name="PatientId" required style="border-radius: 10px;">
+                    <option value="">Hasta Seçin</option>
+                    @if (ViewData["Patients"] != null)
+                    {
+                        var patients = ViewData["Patients"] as List<MedicalTrackingSystem.Models.Patient>;
+                        if (patients != null && patients.Any())
+                        {
+                            foreach (var patient in patients)
+                            {
+                                <option value="@patient.PatientId">@patient.FirstName @patient.LastName</option>
+                            }
+                        }
+                        else
+                        {
+                            <option value="">Hasta bulunamadı</option>
+                        }
+                    }
+                    else
+                    {
+                        <option value="">Hasta verisi yok</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group mt-3">
+                <label for="TestName" class="font-weight-bold text-muted">Test Adı</label>
+                <input type="text" class="form-control" id="TestName" name="TestName" required
+                    placeholder="Test adı girin" style="border-radius: 10px;">
+            </div>
+            <div class="form-group mt-3">
+                <label for="Result" class="font-weight-bold text-muted">Sonuç</label>
+                <input type="text" class="form-control" id="Result" name="Result" required 
+                    placeholder="Sonuç girin" style="border-radius: 10px;">
+            </div>
+            <button type="submit" class="btn mt-4" 
+                style="border-radius: 50px; background: linear-gradient(to right, #a5c7e3, #e3c4a8); color: white; transition: all 0.3s ease;">
+                Test Sonucu Ekle
+            </button>
+        </div>
+    </form>
+</div>

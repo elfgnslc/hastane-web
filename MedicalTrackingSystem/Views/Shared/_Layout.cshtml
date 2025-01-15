@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Hastane Sistemi</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/wwwroot/health_logo.png">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header-gradient py-4">
+        <div class="container">
+            <h1 class="display-4 text-center mb-4">
+                <i class="fas fa-hospital-alt fa-bounce me-2"></i>
+                Hastane Takip Sistemi
+            </h1>
+            <nav class="nav-pills justify-content-center">
+                <a href="@Url.Action("Index", "Home")" class="nav-link mx-2">
+                    <i class="fas fa-home me-1"></i> Ana Sayfa
+                </a>
+                <a href="@Url.Action("Appointment", "Home")" class="nav-link mx-2">
+                    <i class="fas fa-calendar-check me-1"></i> Randevu
+                </a>
+                <a href="@Url.Action("About", "Home")" class="nav-link mx-2">
+                    <i class="fas fa-info-circle me-1"></i> Hakkımızda
+                </a>
+                <a href="@Url.Action("Contact", "Home")" class="nav-link mx-2">
+                    <i class="fas fa-envelope me-1"></i> İletişim
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-gradient py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-hospital me-2"></i>Hakkımızda</h5>
+                    <p>Modern sağlık hizmetlerini dijital dünyayla buluşturan yenilikçi platformunuz.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-clock me-2"></i>Çalışma Saatleri</h5>
+                    <p>Pazartesi - Cumartesi: 09:00 - 20:00<br>Pazar: Kapalı</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-phone me-2"></i>İletişim</h5>
+                    <p>Tel: +90 123 456 7890<br>Email: info@hastane.com</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">© 2024 Hastane Takip Sistemi - Tüm Hakları Saklıdır</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .header-gradient {
+        background: linear-gradient(135deg, #a8a0df 0%, #e7d0ea 100%);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .footer-gradient {
+        background: linear-gradient(135deg, #666593 0%, #30344a 100%);
+        color: white;
+    }
+
+    .nav-link {
+        color: #30344a;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        color: #060612;
+    }
+
+    h1 {
+        color: #30344a;
+        font-weight: 600;
+    }
+
+    footer h5 {
+        color: #e7d0ea;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    footer p {
+        color: #f8f9fa;
+        font-weight: 300;
+    }
+
+    .fa-bounce {
+        animation: bounce 2s infinite;
+    }
+
+    @@keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+</style>

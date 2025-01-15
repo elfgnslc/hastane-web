@@ -1,0 +1,299 @@
+@{
+    Layout = "_Layout";
+}
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-hospital-alt me-2 fa-bounce" style="--fa-animation-duration: 3s;"></i>
+            Hastane Takip Sistemi
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="hero-section">
+    <div class="container my-5">
+        <h1 class="text-center mb-4 main-title">@ViewData["Title"]</h1>
+        <div class="row my-4">
+            <!-- Veri Ekleme Kartları -->
+            <div class="col-md-6">
+                <h3 class="mb-4 section-title">Veri Ekleme</h3>
+
+                <!-- Doktor Ekle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 doctor-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-md fa-3x mb-3 fa-bounce" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Doktor Ekle</h5>
+                        <p class="card-text">Yeni doktor bilgilerini sisteme ekleyebilirsiniz.</p>
+                        <a href="@Url.Action("AddDoctor", "Home")" class="btn btn-doctor">Doktor Ekle</a>
+                    </div>
+                </div>
+
+                <!-- Hasta Ekle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 patient-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user fa-3x mb-3 fa-pulse" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Hasta Ekle</h5>
+                        <p class="card-text">Yeni hasta bilgilerini sisteme ekleyebilirsiniz.</p>
+                        <a href="@Url.Action("AddPatient", "Home")" class="btn btn-patient">Hasta Ekle</a>
+                    </div>
+                </div>
+
+                <!-- Randevu Oluştur Kartı -->
+                <div class="card shadow-lg mb-4 border-0 appointment-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar-plus fa-3x mb-3 fa-spin" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Randevu Oluştur</h5>
+                        <p class="card-text">Doktor ve hasta seçerek randevu oluşturabilirsiniz.</p>
+                        <a href="@Url.Action("AddAppointment", "Home")" class="btn btn-appointment">Randevu Oluştur</a>
+                    </div>
+                </div>
+
+                <!-- Alerji Sonucu Ekle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 allergy-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-allergies fa-3x mb-3 fa-flip" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Alerji Sonucu Ekle</h5>
+                        <p class="card-text">Yeni alerji bilgilerini sisteme ekleyebilirsiniz.</p>
+                        <a href="@Url.Action("AddAllerrgy", "Home")" class="btn btn-allergy">Alerji Ekle</a>
+                    </div>
+                </div>
+
+                <!-- Tahlil Sonucu Ekle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 test-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-flask fa-3x mb-3 fa-shake" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Tahlil Sonucu Ekle</h5>
+                        <p class="card-text">Yeni tahlil sonuçlarını sisteme ekleyebilirsiniz.</p>
+                        <a href="@Url.Action("AddtestResults", "Home")" class="btn btn-test">Tahlil Ekle</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Veri Görüntüleme Kartları -->
+            <div class="col-md-6">
+                <h3 class="mb-4 section-title">Veri Görüntüleme</h3>
+
+                <!-- Doktor Bilgileri Görüntüle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 doctor-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-3x mb-3 fa-bounce" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Doktor Bilgileri Görüntüle</h5>
+                        <p class="card-text">Sistemdeki tüm doktorları görüntüleyebilirsiniz.</p>
+                        <a href="@Url.Action("ViewDoctors", "Home")" class="btn btn-doctor">Doktorları Görüntüle</a>
+                    </div>
+                </div>
+
+                <!-- Hasta Bilgileri Görüntüle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 patient-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-procedures fa-3x mb-3 fa-pulse" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Hasta Bilgileri Görüntüle</h5>
+                        <p class="card-text">Sistemdeki tüm hastaları görüntüleyebilirsiniz.</p>
+                        <a href="@Url.Action("ViewPatients", "Home")" class="btn btn-patient">Hastaları Görüntüle</a>
+                    </div>
+                </div>
+
+                <!-- Randevuları Görüntüle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 appointment-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar-check fa-3x mb-3 fa-spin" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Randevuları Görüntüle</h5>
+                        <p class="card-text">Sistemdeki tüm randevuları görüntüleyebilirsiniz.</p>
+                        <a href="@Url.Action("ViewAppointments", "Home")" class="btn btn-appointment">Randevuları Görüntüle</a>
+                    </div>
+                </div>
+
+                <!-- Alerji Sonuçlarını Görüntüle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 allergy-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-allergies fa-3x mb-3 fa-flip" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Alerji Sonuçlarını Görüntüle</h5>
+                        <p class="card-text">Sistemdeki tüm alerji sonuçlarını görüntüleyebilirsiniz.</p>
+                        <a href="@Url.Action("ViewAllergyResults", "Home")" class="btn btn-allergy">Alerji Görüntüle</a>
+                    </div>
+                </div>
+
+                <!-- Tahlil Sonuçlarını Görüntüle Kartı -->
+                <div class="card shadow-lg mb-4 border-0 test-card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-flask fa-3x mb-3 fa-shake" style="--fa-animation-duration: 3s;"></i>
+                        <h5 class="card-title">Tahlil Sonuçlarını Görüntüle</h5>
+                        <p class="card-text">Sistemdeki tüm tahlil sonuçlarını görüntüleyebilirsiniz.</p>
+                        <a href="@Url.Action("ViewtestResults", "Home")" class="btn btn-test">Tahlil Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-section {
+        background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .main-title {
+        color: #2c3e50;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+    }
+
+    .section-title {
+        color: #34495e;
+        font-weight: 600;
+        border-bottom: 2px solid #e3e3e3;
+        padding-bottom: 0.5rem;
+    }
+
+    .card {
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Doktor kartları için stil */
+    .doctor-card {
+        background: linear-gradient(145deg, #ffffff, #e8f4f8);
+    }
+    .doctor-card i { color: #4a90e2; }
+    .btn-doctor {
+        background: linear-gradient(to right, #4a90e2, #357abd);
+        color: white;
+    }
+
+    /* Hasta kartları için stil */
+    .patient-card {
+        background: linear-gradient(145deg, #ffffff, #f8e8e8);
+    }
+    .patient-card i { color: #e27474; }
+    .btn-patient {
+        background: linear-gradient(to right, #e27474, #c85a5a);
+        color: white;
+    }
+
+    /* Randevu kartları için stil */
+    .appointment-card {
+        background: linear-gradient(145deg, #ffffff, #e8f8e8);
+    }
+    .appointment-card i { color: #2ecc71; }
+    .btn-appointment {
+        background: linear-gradient(to right, #2ecc71, #27ae60);
+        color: white;
+    }
+
+    /* Alerji kartları için stil */
+    .allergy-card {
+        background: linear-gradient(145deg, #ffffff, #f8e8f8);
+    }
+    .allergy-card i { color: #9b59b6; }
+    .btn-allergy {
+        background: linear-gradient(to right, #9b59b6, #8e44ad);
+        color: white;
+    }
+
+    /* Tahlil kartları için stil */
+    .test-card {
+        background: linear-gradient(145deg, #ffffff, #fff8e8);
+    }
+    .test-card i { color: #f1c40f; }
+    .btn-test {
+        background: linear-gradient(to right, #f1c40f, #f39c12);
+        color: white;
+    }
+
+    .card-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .card-text {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        border-radius: 25px;
+        padding: 8px 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        color: white;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+        animation: fadeIn 0.5s ease-out forwards;
+    }
+</style>

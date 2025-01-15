@@ -1,0 +1,145 @@
+@{
+    var patientAppointments = ViewBag.PatientAppointments as Dictionary<int, List<Appointment>>;
+    var patientAllergyResults = ViewBag.PatientAllergyResults as Dictionary<int, List<Allergy>>;
+    var patientTestResults = ViewBag.PatientTestResults as Dictionary<int, List<TestResults>>;
+}
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Alerji Sonucu Ekle";
+}
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Hastane Takip Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card shadow-lg">
+                <h1 class="text-center mb-0 py-4 title-gradient">
+                    <i class="fas fa-allergies fa-bounce"></i> Yeni Alerji Ekle
+                </h1>
+                <div class="card-body form-background">
+                    <form asp-action="AddAllerrgy" method="post">
+                        <div class="form-group mb-3">
+                            <label for="PatientId" class="form-label">Hasta Seçin</label>
+                            <select class="form-control custom-input" id="PatientId" name="PatientId" required>
+                                <option value="">Hasta Seçin</option>
+                                @if (ViewBag.Patients == null)
+                                {
+                                    <p>Hasta verisi bulunamadı.</p>
+                                }
+                                else
+                                {
+                                    @foreach (var patient in ViewBag.Patients as List<MedicalTrackingSystem.Models.Patient>)
+                                    {
+                                        <option value="@patient.PatientId">@patient.FirstName @patient.LastName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="Name" class="form-label">Alerji Adı</label>
+                            <input type="text" class="form-control custom-input" id="Name" name="Name" required placeholder="Alerji adı girin">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="Allergen" class="form-label">Alerjen</label>
+                            <input type="text" class="form-control custom-input" id="Allergen" name="Allergen" required placeholder="Alerjen adı girin">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="Reaction" class="form-label">Reaksiyon</label>
+                            <input type="text" class="form-control custom-input" id="Reaction" name="Reaction" required placeholder="Reaksiyon girin">
+                        </div>
+                        <button type="submit" class="btn w-100 submit-btn">
+                            <i class="fas fa-plus-circle me-2"></i>Alerji Ekle
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .title-gradient {
+        background: linear-gradient(to right, #a5c7e3, #e3c4a8);
+        color: white;
+        margin: 0;
+    }
+
+    .form-background {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        padding: 2rem;
+    }
+
+    .custom-input {
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        padding: 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .custom-input:focus {
+        border-color: #a5c7e3;
+        box-shadow: 0 0 0 0.2rem rgba(165, 199, 227, 0.25);
+    }
+
+    .submit-btn {
+        background: linear-gradient(to right, #a5c7e3, #e3c4a8);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .fa-bounce {
+        animation: bounce 2s infinite;
+    }
+
+    @@keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+</style>

@@ -1,0 +1,62 @@
+/* Genel Sayfa Ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Başlık Düzenlemeleri */
+h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Her Bölüm İçin Margin */
+section {
+    margin-bottom: 30px;
+}
+
+/* List Group Öğeleri İçin Stil */
+.list-group-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sekme Arkaplanı ve Yazı Stili */
+h3 {
+    font-size: 1.75rem;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+/* Buton Stili */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

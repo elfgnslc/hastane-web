@@ -1,0 +1,176 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "İletişim";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Hastane Takip Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <h1 class="text-center mb-0 py-4 title-gradient">
+            <i class="fas fa-envelope fa-bounce"></i> İletişim
+        </h1>
+        <div class="card-body form-background">
+            <div class="row">
+                <!-- Sol Kısım: İletişim Bilgileri -->
+                <div class="col-md-6">
+                    <div class="info-section mb-4">
+                        <h3><i class="fas fa-map-marker-alt me-2"></i>Adres</h3>
+                        <p>Konya, Selçuklu Mahallesi, <br> XYZ Caddesi, No: 45</p>
+                    </div>
+                    
+                    <div class="info-section mb-4">
+                        <h3><i class="fas fa-phone-alt me-2"></i>Telefon</h3>
+                        <p><strong>0332 123 45 67</strong><br>Hafta içi 09:00 - 18:00 saatleri arasında ulaşabilirsiniz.</p>
+                    </div>
+                    
+                    <div class="info-section mb-4">
+                        <h3><i class="fas fa-envelope me-2"></i>E-posta</h3>
+                        <p><a href="mailto:bilgi@hastane.com">bilgi@hastane.com</a><br>Her türlü soru ve öneri için bizimle iletişime geçebilirsiniz.</p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h3><i class="fas fa-share-alt me-2"></i>Sosyal Medya</h3>
+                        <div class="social-links">
+                            <a href="https://facebook.com/hastanetakipsistemi" target="_blank"><i class="fab fa-facebook fa-2x me-3"></i></a>
+                            <a href="https://twitter.com/hastanetakipsistemi" target="_blank"><i class="fab fa-twitter fa-2x me-3"></i></a>
+                            <a href="https://instagram.com/hastanetakipsistemi" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kısım: Harita ve İletişim Formu -->
+                <div class="col-md-6">
+                    <div class="map-section mb-4">
+                        <h3><i class="fas fa-map me-2"></i>Bizi Bulun</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0123456!2d32.000000!3d37.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34e567890ab12%3A0x1234567890abcxyz!2sHastane%20Takip%20Sistemi!5e0!3m2!1str!2str!4v1630100000000" width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3><i class="fas fa-paper-plane me-2"></i>Bizimle İletişime Geçin</h3>
+                        <form action="#" method="POST">
+                            <div class="mb-3">
+                                <input type="text" class="form-control custom-input" placeholder="Adınız ve Soyadınız" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control custom-input" placeholder="E-posta Adresiniz" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control custom-input" rows="4" placeholder="Mesajınız" required></textarea>
+                            </div>
+                            <button type="submit" class="btn w-100 submit-btn">
+                                <i class="fas fa-paper-plane me-2"></i>Gönder
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .title-gradient {
+        background: linear-gradient(to right, #a5c7e3, #e3c4a8);
+        color: white;
+        margin: 0;
+    }
+
+    .form-background {
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        padding: 2rem;
+    }
+
+    .info-section h3 {
+        color: #46608f;
+        margin-bottom: 1rem;
+    }
+
+    .info-section p {
+        color: #666;
+    }
+
+    .social-links a {
+        color: #a5c7e3;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        color: #e3c4a8;
+        transform: translateY(-3px);
+    }
+
+    .custom-input {
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        padding: 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .custom-input:focus {
+        border-color: #a5c7e3;
+        box-shadow: 0 0 0 0.2rem rgba(165, 199, 227, 0.25);
+    }
+
+    .submit-btn {
+        background: linear-gradient(to right, #a5c7e3, #e3c4a8);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .fa-bounce {
+        animation: bounce 2s infinite;
+    }
+
+    @@keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+</style>

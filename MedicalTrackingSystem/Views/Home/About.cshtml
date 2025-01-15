@@ -1,0 +1,200 @@
+﻿@{
+    ViewData["Title"] = "Hakkında";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Hastane Takip Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <h1 class="text-center mb-0 py-4 title-gradient">
+            <i class="fas fa-info-circle fa-bounce"></i> Hakkımızda
+        </h1>
+        <div class="card-body form-background">
+            <p class="lead">Hastane Takip Sistemimiz, modern sağlık hizmetlerini dijital dünyayla buluşturan yenilikçi bir platformdur. Biz, kullanıcılarımızın gizliliğine ve veri güvenliğine büyük önem veriyor, bu doğrultuda en üst düzey önlemleri alıyoruz. Bu Gizlilik Politikası, sizinle aramızdaki güven ilişkisinin temelini oluşturan veri toplama, kullanma ve koruma prensiplerimizi detaylı bir şekilde açıklamaktadır.</p>
+            
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-database me-2 fa-pulse"></i>1. Toplanan Bilgiler</h3>
+                <p>Sistemimizi kullandığınızda veya hizmetlerimizden yararlandığınızda, size daha iyi hizmet verebilmek için bazı bilgilerinizi toplamaktayız. Bu bilgiler şunları içerebilir:</p>
+                <ul>
+                    <li><i class="fas fa-check me-2"></i>Kimlik bilgileriniz (TC kimlik numarası, ad-soyad, doğum tarihi)</li>
+                    <li><i class="fas fa-check me-2"></i>İletişim bilgileriniz (e-posta adresi, telefon numarası, adres)</li>
+                    <li><i class="fas fa-check me-2"></i>Teknik veriler (IP adresi, cihaz bilgileri, konum verileri)</li>
+                    <li><i class="fas fa-check me-2"></i>Tarayıcı tercihleri ve ayarları</li>
+                    <li><i class="fas fa-check me-2"></i>Site kullanım alışkanlıkları ve tercihleriniz</li>
+                    <li><i class="fas fa-check me-2"></i>Sağlık geçmişiniz ve tıbbi kayıtlarınız</li>
+                </ul>
+            </div>
+
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-cogs me-2 fa-spin"></i>2. Bilgilerin Kullanımı</h3>
+                <p>Topladığımız değerli bilgilerinizi aşağıdaki amaçlar doğrultusunda özenle kullanmaktayız:</p>
+                <ul>
+                    <li><i class="fas fa-check me-2"></i>Sağlık hizmetlerimizi kişiselleştirmek ve optimize etmek</li>
+                    <li><i class="fas fa-check me-2"></i>Randevu sistemini daha verimli hale getirmek</li>
+                    <li><i class="fas fa-check me-2"></i>Hasta takip süreçlerini iyileştirmek ve geliştirmek</li>
+                    <li><i class="fas fa-check me-2"></i>Acil durumlarda hızlı müdahale imkanı sağlamak</li>
+                    <li><i class="fas fa-check me-2"></i>Sağlık hizmetleri hakkında bilgilendirmeler yapmak</li>
+                    <li><i class="fas fa-check me-2"></i>Yasal yükümlülüklerimizi yerine getirmek</li>
+                </ul>
+            </div>
+
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-share-alt me-2 fa-flip"></i>3. Bilgilerin Paylaşılması</h3>
+                <p>Hasta mahremiyeti bizim için son derece önemlidir. Kişisel bilgileriniz, yalnızca yasal zorunluluk halinde veya açık rızanız doğrultusunda, gerekli güvenlik önlemleri alınarak, yetkili sağlık kuruluşları ve resmi kurumlarla paylaşılabilir. Her türlü veri paylaşımı, KVKK ve ilgili mevzuat çerçevesinde gerçekleştirilmektedir.</p>
+            </div>
+
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-cookie-bite me-2 fa-shake"></i>4. Çerezler (Cookies)</h3>
+                <p>Web sitemiz, kullanıcı deneyimini iyileştirmek ve hizmet kalitemizi artırmak amacıyla çerezler kullanmaktadır. Bu çerezler, tercihlerinizi hatırlamak, site güvenliğini sağlamak ve size özelleştirilmiş bir deneyim sunmak için kullanılır. Çerez kullanımı hakkında detaylı bilgi için Çerez Politikamızı inceleyebilirsiniz.</p>
+            </div>
+
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-shield-alt me-2 fa-beat"></i>5. Bilgilerin Güvenliği</h3>
+                <p>Verilerinizin güvenliği bizim için en üst önceliktir. Bu amaçla, endüstri standardı SSL şifreleme, güvenlik duvarları, veri şifreleme, fiziksel güvenlik önlemleri ve düzenli güvenlik denetimleri gibi çeşitli teknik ve idari önlemler uygulamaktayız. Tüm çalışanlarımız, veri gizliliği konusunda düzenli eğitimler almaktadır.</p>
+            </div>
+
+            <div class="info-section mb-4">
+                <h3><i class="fas fa-sync me-2 fa-spin"></i>6. Değişiklikler</h3>
+                <p>Teknolojik gelişmeler ve yasal düzenlemeler doğrultusunda Gizlilik Politikamızı güncelleyebiliriz. Önemli değişiklikler olması durumunda, size e-posta yoluyla bilgilendirme yapılacak ve web sitemizde duyuru yayınlanacaktır. Güncel politikamıza her zaman web sitemizden ulaşabilirsiniz.</p>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-envelope me-2 fa-bounce"></i>7. İletişim</h3>
+                <p><i class="fas fa-envelope me-2"></i>Email: support@ornekmail.com (7/24 destek)</p>
+                <p><i class="fas fa-phone me-2"></i>Telefon: +90 123 456 7890 (Hafta içi 09:00-18:00)</p>
+                <p><i class="fas fa-map-marker-alt me-2"></i>Adres: Konya, Selçuklu Mahallesi, XYZ Caddesi, No: 45</p>
+                <p><i class="fas fa-clock me-2"></i>Çalışma Saatleri: Pazartesi-Cumartesi 09:00-20:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    .title-gradient {
+        background: linear-gradient(to right, #a5c7e3, #e3c4a8);
+        color: white;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .form-background {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+        padding: 2rem;
+    }
+
+    .info-section {
+        padding: 1.5rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        border-left: 4px solid #a5c7e3;
+    }
+
+    .info-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .info-section h3 {
+        color: #46608f;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .info-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .info-section li {
+        margin-bottom: 0.8rem;
+        color: #666;
+        font-weight: 300;
+    }
+
+    .fa-bounce {
+        animation: bounce 2s infinite;
+    }
+
+    @@keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand, .nav-link {
+        color: #46608f !important;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .nav-link:hover {
+        color: #e3c4a8 !important;
+        transform: translateY(-2px);
+    }
+
+    p {
+        line-height: 1.8;
+        font-weight: 300;
+        color: #666;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #333;
+    }
+</style>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veri Ekleme Sayfası</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Veri Ekleme Sayfası</h1>
+
+        <!-- Doktor Ekle Formu -->
+        <section class="form-section" id="doctor-form">
+            <h2>Doktor Ekle</h2>
+            <form>
+                <label for="doctor-name">Ad:</label>
+                <input type="text" id="doctor-name" name="doctor-name" required>
+
+                <label for="doctor-surname">Soyad:</label>
+                <input type="text" id="doctor-surname" name="doctor-surname" required>
+
+                <label for="specialty">Uzmanlık Alanı:</label>
+                <input type="text" id="specialty" name="specialty" required>
+
+                <label for="hospital">Çalıştığı Hastane:</label>
+                <input type="text" id="hospital" name="hospital" required>
+
+                <label for="consultation-fee">Muayene Ücreti:</label>
+                <input type="number" id="consultation-fee" name="consultation-fee" required>
+
+                <button type="submit">Doktor Ekle</button>
+            </form>
+        </section>
+
+        <!-- Hasta Ekle Formu -->
+        <section class="form-section" id="patient-form">
+            <h2>Hasta Ekle</h2>
+            <form>
+                <label for="patient-name">Ad:</label>
+                <input type="text" id="patient-name" name="patient-name" required>
+
+                <label for="patient-surname">Soyad:</label>
+                <input type="text" id="patient-surname" name="patient-surname" required>
+
+                <label for="age">Yaş:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="gender">Cinsiyet:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                    <option value="Diğer">Diğer</option>
+                </select>
+
+                <button type="submit">Hasta Ekle</button>
+            </form>
+        </section>
+
+        <!-- Randevu Oluştur Formu -->
+        <section class="form-section" id="appointment-form">
+            <h2>Randevu Oluştur</h2>
+            <form>
+                <label for="doctor">Doktor:</label>
+                <input type="text" id="doctor" name="doctor" required>
+
+                <label for="patient">Hasta:</label>
+                <input type="text" id="patient" name="patient" required>
+
+                <label for="appointment-date">Tarih:</label>
+                <input type="date" id="appointment-date" name="appointment-date" required>
+
+                <label for="appointment-time">Saat:</label>
+                <input type="time" id="appointment-time" name="appointment-time" required>
+
+                <button type="submit">Randevu Oluştur</button>
+            </form>
+        </section>
+
+        <!-- Tahlil Sonucu Ekle Formu -->
+        <section class="form-section" id="test-result-form">
+            <h2>Tahlil Sonucu Ekle</h2>
+            <form>
+                <label for="patient-name-test">Hasta Adı:</label>
+                <input type="text" id="patient-name-test" name="patient-name-test" required>
+
+                <label for="test-result">Tahlil Sonucu:</label>
+                <textarea id="test-result" name="test-result" rows="4" required></textarea>
+
+                <button type="submit">Tahlil Sonucu Ekle</button>
+            </form>
+        </section>
+
+        <!-- Alerji Sonucu Ekle Formu -->
+        <section class="form-section" id="allergy-form">
+            <h2>Alerji Sonucu Ekle</h2>
+            <form>
+                <label for="patient-name-allergy">Hasta Adı:</label>
+                <input type="text" id="patient-name-allergy" name="patient-name-allergy" required>
+
+                <label for="allergen-name">Alerjen Adı:</label>
+                <input type="text" id="allergen-name" name="allergen-name" required>
+
+                <label for="allergy-description">Alerji Açıklaması:</label>
+                <textarea id="allergy-description" name="allergy-description" rows="4" required></textarea>
+
+                <button type="submit">Alerji Sonucu Ekle</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

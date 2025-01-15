@@ -1,0 +1,80 @@
+@model MedicalTrackingSystem.Models.Appointment
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Randevu Oluştur";
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand color3" href="#">Hastane Takip Sistemi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Index", "Home")">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Appointment", "Home")">Randevu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("About", "Home")">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color4" href="@Url.Action("Contact", "Home")">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4" 
+        style="background: linear-gradient(to right, #a5c7e3, #e3c4a8); color: white; padding: 15px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        Randevu Oluştur
+    </h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0" style="border-radius: 15px; background: linear-gradient(145deg, #ffffff, #f8f9fa);">
+                <div class="card-body p-4">
+                    <form asp-action="AddAppointment" method="post">
+                        <div class="form-group mb-3">
+                            <label for="DoctorId" class="form-label" style="color: #7c98b3;">Doktor Seçin</label>
+                            <select class="form-control" id="DoctorId" name="DoctorId" required 
+                                    style="border-radius: 10px; border: 1px solid #e3e3e3;">
+                                <option value="">Doktor Seçin</option>
+                                @foreach (var doctor in ViewData["Doctors"] as List<MedicalTrackingSystem.Models.Doctor>)
+                                {
+                                    <option value="@doctor.DoctorId">@doctor.FirstName @doctor.LastName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="PatientId" class="form-label" style="color: #7c98b3;">Hasta Seçin</label>
+                            <select class="form-control" id="PatientId" name="PatientId" required
+                                    style="border-radius: 10px; border: 1px solid #e3e3e3;">
+                                <option value="">Hasta Seçin</option>
+                                @foreach (var patient in ViewData["Patients"] as List<MedicalTrackingSystem.Models.Patient>)
+                                {
+                                    <option value="@patient.PatientId">@patient.FirstName @patient.LastName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="Date" class="form-label" style="color: #7c98b3;">Randevu Tarihi</label>
+                            <input type="datetime-local" class="form-control" id="Date" name="Date" required
+                                   style="border-radius: 10px; border: 1px solid #e3e3e3;">
+                        </div>
+                        <button type="submit" class="btn w-100" 
+                                style="background: linear-gradient(to right, #a5c7e3, #e3c4a8); color: white; border-radius: 50px; padding: 10px; transition: all 0.3s ease;">
+                            Randevu Oluştur
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+/* _content/MedicalTrackingSystem/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Ana Sayfa Genel Stilleri */
+body[b-s1frychhe4] {
+  font-family: 'Roboto', sans-serif; /* Modern bir yazı tipi */
+  background-color: #f1f4f8; /* Hafif gri arka plan */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header[b-s1frychhe4] {
+  background-color: #a8e6cf; /* Çok açık yeşil */
+  color: white;
+  border-bottom: 5px solid #80d6b7; /* Biraz daha koyu açık yeşil alt çizgi */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+header h1[b-s1frychhe4] {
+  font-size: 3.5rem;
+  font-weight: 600; /* Kalın başlık */
+}
+
+header nav[b-s1frychhe4] {
+  margin-top: 20px;
+}
+
+header a[b-s1frychhe4] {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+header a:hover[b-s1frychhe4] {
+  color: #ffc107; /* Hover rengini sarı yap */
+}
+
+/* Card Elemanları */
+.card[b-s1frychhe4] {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover[b-s1frychhe4] {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body[b-s1frychhe4] {
+  padding: 25px;
+}
+
+.card-title[b-s1frychhe4] {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.card-text[b-s1frychhe4] {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.card i[b-s1frychhe4] {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #a8e6cf; /* Çok açık yeşil */
+}
+
+/* Footer */
+footer[b-s1frychhe4] {
+  background-color: #343a40;
+  color: white;
+}
+
+footer p[b-s1frychhe4] {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Button */
+.btn[b-s1frychhe4] {
+  font-size: 1.125rem;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary[b-s1frychhe4] {
+  background-color: #a8e6cf; /* Çok açık yeşil */
+  border-color: #a8e6cf;
+}
+
+.btn-success[b-s1frychhe4] {
+  background-color: #80d6b7; /* Biraz koyu açık yeşil */
+  border-color: #80d6b7;
+}
+
+.btn-warning[b-s1frychhe4] {
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-danger[b-s1frychhe4] {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-info[b-s1frychhe4] {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn:hover[b-s1frychhe4] {
+  background-color: #80d6b7; /* Biraz koyu açık yeşil */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  header h1[b-s1frychhe4] {
+      font-size: 2.5rem;
+  }
+
+  header nav a[b-s1frychhe4] {
+      font-size: 1rem;
+  }
+
+  .card[b-s1frychhe4] {
+      margin-bottom: 20px;
+  }
+
+  .card-body[b-s1frychhe4] {
+      padding: 20px;
+  }
+}
